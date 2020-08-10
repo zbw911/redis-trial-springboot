@@ -2,7 +2,6 @@ package com.example.testcachelib.demo.config.redis.config;
 
 import com.example.utils.EnvUtils;
 import io.lettuce.core.resource.DefaultClientResources;
-import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.data.redis.LettuceClientConfigurationBuilderCustomizer;
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
@@ -34,8 +33,6 @@ public class LettuceCreater {
 
         DefaultClientResources defaultClientResources = lettuceConnectionConfiguration.lettuceClientResources();
         LettuceConnectionFactory lettuceConnectionFactory = lettuceConnectionConfiguration.redisConnectionFactory(defaultClientResources);
-
-
 
         return lettuceConnectionFactory;
     }

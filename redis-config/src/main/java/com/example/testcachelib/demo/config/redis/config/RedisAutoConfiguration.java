@@ -52,25 +52,25 @@ import java.net.UnknownHostException;
 @EnableConfigurationProperties({RedisProperties.class, RedisLettuceProperties.class, RedisClusterProperties.class})
 @Import({LettuceConnectionConfiguration.class/*, JedisConnectionConfiguration.class*/})
 public class RedisAutoConfiguration {
-	public RedisAutoConfiguration() {
-		int i = 1;
-	}
+    public RedisAutoConfiguration() {
+        int i = 1;
+    }
 
-	@Bean
-	@ConditionalOnMissingBean(name = "redisTemplate")
-	public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory)
-			throws UnknownHostException {
-		RedisTemplate<Object, Object> template = new RedisTemplate<>();
-		template.setConnectionFactory(redisConnectionFactory);
-		return template;
-	}
+    @Bean
+    @ConditionalOnMissingBean(name = "redisTemplate")
+    public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory)
+            throws UnknownHostException {
+        RedisTemplate<Object, Object> template = new RedisTemplate<>();
+        template.setConnectionFactory(redisConnectionFactory);
+        return template;
+    }
 
-	@Bean
-	@ConditionalOnMissingBean
-	public StringRedisTemplate stringRedisTemplate(RedisConnectionFactory redisConnectionFactory)
-			throws UnknownHostException {
-		StringRedisTemplate template = new StringRedisTemplate();
-		template.setConnectionFactory(redisConnectionFactory);
-		return template;
-	}
+    @Bean
+    @ConditionalOnMissingBean
+    public StringRedisTemplate stringRedisTemplate(RedisConnectionFactory redisConnectionFactory)
+            throws UnknownHostException {
+        StringRedisTemplate template = new StringRedisTemplate();
+        template.setConnectionFactory(redisConnectionFactory);
+        return template;
+    }
 }

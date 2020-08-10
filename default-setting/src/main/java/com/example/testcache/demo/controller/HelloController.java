@@ -22,8 +22,9 @@ public class HelloController {
     @Autowired
     RedisClient redisClient;
 
-
-    @Autowired    @Qualifier("first") RedisClient redisClient_frist;
+    @Autowired
+    @Qualifier("first")
+    RedisClient redisClient_frist;
 
     @Autowired
     @Qualifier("second")

@@ -55,5 +55,4 @@ public class RedisLettuceProperties /*extends RedisProperties.Lettuce*/ {
         }
     }
 
-
 }
