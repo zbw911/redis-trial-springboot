@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.example.testcachelib.demo.config.redis.config.RedisAutoConfiguration,\
+  com.example.testcachelib.demo.config.redis.RedisClientAutoConfig,\
+  com.example.testcachelib.demo.config.redis.MultiRedisClientConfig
